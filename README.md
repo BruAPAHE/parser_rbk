@@ -9,8 +9,10 @@
 
 ## Docker
 ##### Run: `docker-compose -f docker-compose.yml up -d`
-##### Build: `make image.build.go`
-##### Push: `make image.push.go`
+##### Build php: `make image.build.php`
+##### Push php: `make image.push.php`
+##### Build nginx: `make image.build.nginx`
+##### Push nginx: `make image.push.nginx`
 
 
 ## Modules in project
