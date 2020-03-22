@@ -1,0 +1,25 @@
+version: "3.0"
+
+services:
+  nginx:
+    image: apahe/nginx
+    volumes:
+      - ./src:/app
+    ports:
+      - 8091:80
+    links:
+      - app
+  app:
+    image: apahe/php
+    volumes:
+      - ./src:/app
+    environment:
+      - "DB_CONNECTION=mongodb"
+      - "DB_DSN=mongodb://mongo:27017"
+      - "DB_DATABASE=rss"
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
